@@ -35,10 +35,13 @@ def ocr(image_file):
     )
     ektp_no = re.search( r'[?:nik\s*:\s*](\d{1,20})\s*', txt, re.I)
     #print ektp_no
-    #if ektp_no:
-    #    print "ektp_no.group() : ", ektp_no.group()
     data = {}
-    data['ektp'] = ektp_no.group().strip()
+    if ektp_no:
+    #    print "ektp_no.group() : ", ektp_no.group()
+        data['ektp'] = ektp_no.group().strip()
+    else:
+         data['ektp'] = 'Error'
+            
     return json.dumps(data)
 
 @app.route("/")
