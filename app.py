@@ -46,7 +46,7 @@ def ocr(image_file):
 
 @app.route("/")
 def index():
-    return render_template("upload.html")
+    return 'OK'
 
 @app.route("/upload", methods=['POST'])
 def upload():
