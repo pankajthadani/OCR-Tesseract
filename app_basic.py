@@ -40,7 +40,7 @@ def ocr(image_file):
     #    print "ektp_no.group() : ", ektp_no.group()
         data['ektp'] = ektp_no.group().strip()
     else:
-         data['ektp'] = 'Error'
+        data['ektp'] = 'Error'
             
     return json.dumps(data)
 
